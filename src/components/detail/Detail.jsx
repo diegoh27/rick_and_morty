@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect} from 'react'
 
 
-let api_key = 'bf3d7a6f6a9d.11842c0a6d417507ab9a';
-let url_base = 'https://be-a-rym.up.railway.app/api/character';
+// let api_key = 'bf3d7a6f6a9d.11842c0a6d417507ab9a';
+// let url_base = 'https://be-a-rym.up.railway.app/api/character';
 
 const Detail = () => {
     
@@ -14,7 +14,7 @@ const Detail = () => {
     
     useEffect(() => {
       
-        axios(`${url_base}/${id}?key=${api_key}`)
+        axios(`http://localhost:3001/rickandmorty/character/${id}`)
         .then(response => response.data)
         .then ((data) => {
            if (data.name) {

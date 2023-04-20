@@ -10,8 +10,8 @@ import axios from 'axios';
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 
 
-let api_key = 'bf3d7a6f6a9d.11842c0a6d417507ab9a';
-let url_base = 'https://be-a-rym.up.railway.app/api/character';
+// let api_key = 'bf3d7a6f6a9d.11842c0a6d417507ab9a';
+// let url_base = 'https://be-a-rym.up.railway.app/api/character';
 
 
 function App() {
@@ -39,7 +39,7 @@ const login = (userData) => {
 
    let onSearch = (id) =>  {
       
-      axios(`${url_base}/${id}?key=${api_key}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(response => response.data)
       .then((data) => {
          if (data.name ) {
@@ -58,7 +58,7 @@ const login = (userData) => {
           character.id !== id
             )
           setCharacters(characterFilter)
-          console.log(characterFilter);
+         
           
          }
     
@@ -68,7 +68,7 @@ const login = (userData) => {
    let b=827;
    let n = (a+Math.floor(Math.random()*b));
      
-   axios(`${url_base}/${n}?key=${api_key}`)
+   axios(`http://localhost:3001/rickandmorty/character/${n}`)
       .then(response => response.data)
       .then((data) => {
          if (data.name) {

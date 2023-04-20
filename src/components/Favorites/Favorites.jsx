@@ -48,6 +48,7 @@ const Favorites = ({myFavorites }) => {
                image={char.image}
                id = {char.id}
                origin={char.origin}
+               onClose={()=>{return }}
                
                
             />
